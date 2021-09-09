@@ -3,8 +3,10 @@ package com.movie.imdbapi.Service;
 import com.movie.imdbapi.Model.Result;
 import com.movie.imdbapi.Util.UrlGenerator;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+@Service
 public class MovieService {
 
     private final UrlGenerator urlGenerator;

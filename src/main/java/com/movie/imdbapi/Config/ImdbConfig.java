@@ -16,7 +16,7 @@ public class ImdbConfig {
         this.imdb = imdb;
     }
 
-    private class IMDB{
+    public class IMDB{
         private String apiKey;
         private String url;
 

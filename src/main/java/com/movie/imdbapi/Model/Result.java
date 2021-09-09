@@ -25,6 +25,17 @@ public class Result {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Result{" +
+                "id='" + id + '\'' +
+                ", resultType='" + resultType + '\'' +
+                ", image='" + image + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
     public Result() {
     }
 

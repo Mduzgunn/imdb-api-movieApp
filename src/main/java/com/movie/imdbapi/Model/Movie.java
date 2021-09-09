@@ -3,6 +3,8 @@ package com.movie.imdbapi.Model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JacksonStdImpl;
 
+import java.util.Arrays;
+
 @JacksonStdImpl
 public class Movie {
 
@@ -58,4 +60,13 @@ public class Movie {
     }
     ////////////////
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "searchType='" + searchType + '\'' +
+                ", expression='" + expression + '\'' +
+                ", results=" + Arrays.toString(results) +
+                ", errorMessage='" + errorMessage + '\'' +
+                '}';
+    }
 }

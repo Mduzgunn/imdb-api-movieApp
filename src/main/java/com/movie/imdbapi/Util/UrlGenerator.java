@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(value = ImdbConfig.class)
 public class UrlGenerator {
+
     private final ImdbConfig imdbConfig;
 
     public UrlGenerator(ImdbConfig imdbConfig){
