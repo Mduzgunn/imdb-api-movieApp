@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="col-12 text-center">
+    <h1 class="display-4 text-white" th:text="${movie.expression}"></h1>
+</div>
+
+
+<div class="row my-3">
+    <div class="col-4">
+        <div class="h6 text-white">searchType</div>
+    </div>
+    <div class="col-8">
+        <div class="text-white" th:text="${movie.searchType}">searchType</div>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div class="col-4">
+        <div class="h6 text-white">results</div>
+    </div>
+    <div th:each="results: ${movie.results}" class="col-8">
+        <div class="text-white" th:text="${results.id}">results</div>
+    </div>
+</div>
+
+</body>
+</html>
