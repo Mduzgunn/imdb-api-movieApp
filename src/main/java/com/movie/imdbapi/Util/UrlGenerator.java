@@ -16,10 +16,7 @@ public class UrlGenerator {
 
     public String generator(final String movieTitle){
         final var properties =imdbConfig.getImdb();
-
-        System.out.println( properties.getUrl().replace("{apiKey}", properties.getApiKey()).replace("{title}", movieTitle).trim());
         return properties.getUrl().replace("{apiKey}", properties.getApiKey()).replace("{title}", movieTitle).trim();
-
     }
 
 }

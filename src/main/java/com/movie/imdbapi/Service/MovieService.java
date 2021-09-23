@@ -1,6 +1,6 @@
 package com.movie.imdbapi.Service;
 
-import com.movie.imdbapi.Model.Result;
+import com.movie.imdbapi.Model.Data;
 import com.movie.imdbapi.Util.UrlGenerator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,11 +17,11 @@ public class MovieService {
         this.restTemplate = restTemplate;
     }
 
-    public ResponseEntity<Result> find(final String movieTitle){
-        final var response = restTemplate.getForEntity(urlGenerator.generator(movieTitle), Result.class);
-        final var Result = response.getBody();
+    public ResponseEntity<Data> find(final String movieTitle){
+        final var response = restTemplate.getForEntity(urlGenerator.generator(movieTitle), Data.class);
+        final var Data = response.getBody();
 
-        return ResponseEntity.ok(Result);
+        return ResponseEntity.ok(Data);
     }
 
 
