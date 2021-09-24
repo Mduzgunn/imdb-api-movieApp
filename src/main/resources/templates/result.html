@@ -1,33 +1,102 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MOVIE FINDER</title>
+
 </head>
 <body>
 
-<div class="col-12 text-center">
-    <h1 class="display-4 text-white" th:text="${movie.expression}"></h1>
-</div>
+<header>
+    <nav
+            class="navbar-bottom navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
 
 
-<div class="row my-3">
-    <div class="col-4">
-        <div class="h6 text-white">searchType</div>
-    </div>
-    <div class="col-8">
-        <div class="text-white" th:text="${movie.searchType}">searchType</div>
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                <ul class="navbar-nav mr-auto px-1">
+                    <li class="nav-item active"><a class="nav-link" href="/">Home
+                    </a></li>
+                </ul>
+
+                <form class="form-inline" method="post" action="/result">
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text"
+                               placeholder="Search..." aria-label="Search" name="expression">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class=""
+     style="background-image: url('https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div
+            class="mask rgba-black-light justify-content-center align-items-center">
+        <div class="container custom-container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 text-white" th:text="${movie.expression}"></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <div class="card details-card py-2">
+                        <div class="rgba-black-light">
+                            <div class="row my-3">
+                                <div class="col-4">
+                                    <div class="h6 text-white">searchType</div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-white" th:text="${movie.searchType}">searchType</div>
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="col-4">
+                                    <div class="h6 text-white">Actors</div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-white" th:text="${movie.expression}">Marlon
+                                        Brando, Al Pacino, James Caan, Richard S. Castellano</div>
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="col-4">
+                                    <div class="h6 text-white">id</div>
+                                </div>
+                                <div th:each="results: ${movie.results}" class="col-8">
+                                    <div class="text-white" th:text="${results.id}">id</div>
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="col-4">
+                                    <div class="h6 text-white">description</div>
+                                </div>
+                                <div th:each="results: ${movie.results}" class="col-8">
+                                    <div class="text-white" th:text="${results.description}">description</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="row my-3">
-    <div class="col-4">
-        <div class="h6 text-white">results</div>
-    </div>
-    <div th:each="results: ${movie.results}" class="col-8">
-        <div class="text-white" th:text="${results.id}">results</div>
-    </div>
-</div>
 
 </body>
+
 </html>
